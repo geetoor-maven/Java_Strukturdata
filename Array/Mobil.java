@@ -1,6 +1,5 @@
-
+ 
 package Array;
-
 
 public class Mobil {
     private String merek;

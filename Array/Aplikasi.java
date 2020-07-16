@@ -12,7 +12,7 @@ public class Aplikasi {
         // Inialisasi semua variabel
         boolean kondisi = false;
         int data,pilihan;
-        String merek,hapusmerek;
+        String merek,hapusmerek,carimerek;
         
         Scanner input = new Scanner(System.in);
         
@@ -70,26 +70,35 @@ public class Aplikasi {
                             hapusmerek = input.next();
                             
                                     for(int i = 0; i<mobil.length; i++){
-                                            mobil[i] = new Mobil();
+                                            
                                             if(hapusmerek.equals(mobil[i].getMerek())){
-                                                    
                                                        for(int j = i; j<mobil.length-1; j++){
-                                                            
-                                                                mobil[j] =  mobil[j+1];
+                                                           mobil[j] =  mobil[j+1];
                                                        }
                                                        break;
                                             }
-                                        
                                     }
-                            
+                                    for(int i =0; i<mobil.length-1; i++){
+                                         System.out.println("-- Merek mobil ke "+(i+1)+" : "+mobil[i].getMerek());
+                                    }
+                             System.out.println("_________________________________");
                             break;
                             
                 case 4:
                             System.out.println("_________________________________");
                             System.out.println("-------- CARI MEREK MOBIL -------------");
                             System.out.println("_________________________________");
+                            System.out.print("-- Masukan merek mobil yang ingin dicari : ");
+                            carimerek = input.next();
                             
-                            
+                                    for(int i = 0; i<mobil.length; i++){
+                                        if(carimerek.equals(mobil[i].getMerek())){
+                                            System.out.println("Hasil pencarian "+mobil[i].getMerek()+" di temukan");
+                                        }else{
+                                            System.out.println("Hasil pencarian tidak di temukan");
+                                        }
+                                    }
+                             System.out.println("_________________________________");
                             break;
                             
                 case 0:
