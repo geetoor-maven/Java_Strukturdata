@@ -95,11 +95,59 @@ public class Aplikasi {
                    
                   case 3:
                       // hapus data
+                     System.out.println("__________________________________________________________________________________________");
+                     System.out.println("-- Hapus Data kepemilikan kendaraan mobil");
+                     System.out.println("__________________________________________________________________________________________");
+                     String pemilik;
+                     int hapus,i;
+                     System.out.print("-- Cari Nama Pemilik Mobil Yang Ingin di Hapus : ");
+                     pemilik = input.next();
+                     System.out.print("-- Apakah anda benar benar ingin menghapus Pemilik mobil : "+pemilik+" : [1ya, 2tidak] :");
+                     hapus = input.nextInt();
+                     if(hapus == 2){
+                         break;
+                     } 
+                     boolean hasil = mobil.contains(pemilik);
+                     
+                            for(i = 0; i<mobil.size(); i++){
+                                    if(mobil.get(i).getNamapemilik().equals(pemilik)){
+                                        mobil.remove(mobil.get(i));
+                                        System.out.println("-- Berhasil Menghapus Data Kepemilikan Mobil Atas Nama = "+pemilik+" Dengan Data ke = "+(i+1));
+                                        System.out.println("__________________________________________________________________________________________");
+                                    }
+                                    else if(hasil = false){
+                                        System.out.println("-- Data Kepemilikan Mobil Atas Nama : "+pemilik+" Tidak dI Temukan");
+                                        System.out.println("__________________________________________________________________________________________");
+                                    }
+                            }
+                                           
+                      
                       break;
                       
                   case 4:
                       // cari data
-                      break;
+                     System.out.println("__________________________________________________________________________________________");
+                     System.out.println("-- Cari kepemilikan kendaraan mobil");
+                     System.out.println("__________________________________________________________________________________________");
+                     String caripemiik;
+                     int a;
+                     System.out.print("-- Cari Nama Pemilik Mobil Yang Ingin di Hapus : ");
+                     caripemiik = input.next();
+                     System.out.println("__________________________________________________________________________________________");
+                     boolean hasill = mobil.contains(caripemiik);
+                     if(hasill = true){
+                         for(a = 0; a<mobil.size(); a++){
+                             if(mobil.get(a).getNamapemilik().equals(caripemiik)){
+                                 System.out.println("-- Data Kempemilikan Mobil Di temukan Pada Data ke "+(a+1)+" Dengan nama : "+caripemiik);
+                                 System.out.println("__________________________________________________________________________________________");
+                             }
+                         }
+                     }else{
+                           System.out.println("-- Data Kepemilikan Mobil Atas Nama : "+caripemiik+" Tidak dI Temukan");
+                           System.out.println("__________________________________________________________________________________________");                        
+                     }
+                     
+                     break;
                   
                   case 5:
                       kondisi = true;
